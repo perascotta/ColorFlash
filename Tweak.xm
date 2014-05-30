@@ -1,8 +1,9 @@
 #define PLIST_PATH @"/var/mobile/Library/Preferences/screenflash.plist"
 
-inline int GetPrefInt(NSString *key)
-{
+inline int GetPrefInt(NSString *key){
+
 	return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] intValue];
+
 }
 
 %hook SBScreenFlash
@@ -17,13 +18,13 @@ inline int GetPrefInt(NSString *key)
 		{
 			//color = [UIColor colorWithRed:255/255.0f green:1/255.0f blue:0/255.0f alpha:1.0f];
 			fp8 = [UIColor colorWithRed:255/255.0f green:1/255.0f blue:0/255.0f alpha:1.0f];
-			%orig/fp8);
+			%orig(fp8);
 		}
 		case 2:
 		{
 			//color = [UIColor colorWithRed:18/255.0f green:62/255.0f blue:226/255.0f alpha:1.0f];
 			fp8 = [UIColor colorWithRed:18/255.0f green:62/255.0f blue:226/255.0f alpha:1.0f];
-			%orig(fp8(;
+			%orig(fp8);
 		}
 		case 3:
 		{
