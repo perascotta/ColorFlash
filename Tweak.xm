@@ -51,6 +51,6 @@ inline int GetPrefInt(NSString *key)
 	
 	}
 	//return %orig(color);
-	}
+}
 
 %end
